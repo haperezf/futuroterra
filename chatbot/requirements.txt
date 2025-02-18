@@ -1,0 +1,11 @@
+Flask
+flask-cors
+langchain
+chromadb
+pypdf2
+sentence-transformers
+transformers
+numpy
+openai
+langchain-openai
+langchain-community

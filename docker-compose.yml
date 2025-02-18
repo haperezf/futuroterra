@@ -1,0 +1,29 @@
+services:
+  backend:
+    build: ./backend
+    container_name: sag_backend
+    ports:
+      - "5000:5000"
+    volumes:
+      # Solo si quieres montar la carpeta data local
+      - ./backend/data:/app/data
+
+  chatbot:
+    build: ./chatbot
+    container_name: chatbot_backend
+    ports:
+      - "6100:6100"
+    volumes:
+      # Monta la carpeta local 'knowledge' en '/app/knowledge'
+      - ./chatbot/knowledge:/app/knowledge
+      # Monta la carpeta local 'chroma_db' en '/app/chroma_db'
+      - ./chatbot/chroma_db:/app/chroma_db
+
+  frontend:
+    build: ./frontend
+    container_name: sag_frontend
+    ports:
+      - "4000:80"  # Cambia a 3000:80 si prefieres
+    depends_on:
+      - backend
+      - chatbot

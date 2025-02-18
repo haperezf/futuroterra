@@ -1,0 +1,12 @@
+Flask
+flask-cors
+numpy
+pandas
+matplotlib
+seaborn
+tensorflow-cpu
+scikit-learn
+xgboost
+lightgbm
+gymnasium
+stable-baselines3
